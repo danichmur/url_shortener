@@ -13,7 +13,7 @@ def short(request):
 		filled_form = ShortenerForm(request.POST)
 		if filled_form.is_valid():
 			url = filled_form.cleaned_data['url']
-			shortener = Shortener.create(url, request.build_absolute_uri())
+			shortener = Shortener.create(url)
 			shortener.save()
 			note = 'hash url {}/{}!'.format(request.build_absolute_uri(), shortener.short_url)
 			new_form = ShortenerForm()

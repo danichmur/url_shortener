@@ -16,10 +16,8 @@ class Shortener(models.Model):
 		return cut_hash
 
 	@classmethod
-	def create(cls, url, prefix):
+	def create(cls, url):
 		hash_url = cls.get_hash_url(url)
-		#short_url = '{}/{}'.format(prefix, hash_url)
-
 		shortener = cls(url=url, short_url=hash_url)
 		return shortener
 
