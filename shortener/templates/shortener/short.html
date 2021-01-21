@@ -1,0 +1,8 @@
+<h1> Short Links</h1>
+<h2>{{ note }}</h2>
+
+<form action="{% url 'short' %}" method="post">
+{% csrf_token %} 
+{{ shortform }}
+<input type="submit" value="Short!">
+</form>

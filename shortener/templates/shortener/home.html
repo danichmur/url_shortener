@@ -1,0 +1,8 @@
+<h1> Short Links</h1>
+
+<ul>
+{% for shortener in shorteners %}
+<li>{{ shortener }}</li>
+{% endfor %}
+</ul>
+<a href="{% url 'short' %}"> Short Url! </a>
